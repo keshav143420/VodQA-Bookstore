@@ -10,7 +10,7 @@ class BookList extends React.Component {
       <CardColumns>
         {this.props.books.map(book =>
           <Card key={book.id}  >
-            <Card.Img src={book.image} rounded />
+            <Card.Img src={book.image} />
             <Card.Body>
               <Card.Title>{book.title}</Card.Title>
               <Card.Text>{book.description.slice(0, 50) + '...'}

@@ -434,16 +434,52 @@ class VQStore extends React.Component {
         }
         return acc;
       }, {})// .map(book => book.author)
+      ,
+      selectedAuthors: [],
+      filteredBooks: books
     }
   }
 
+  handleSelectAuthor = (authorName) => {
+    if (this.state.selectedAuthors.includes(authorName)) {
+      let arr = this.state.selectedAuthors.slice();
+
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === authorName) {
+          arr.splice(i, 1);
+        }
+      }
+      this.setState({
+        selectedAuthors: arr
+      })
+    } else {
+      this.setState((state) => {
+        selectedAuthors: state.selectedAuthors.push(authorName)
+      })
+    }
+
+    if (this.state.selectedAuthors.length === 0) {
+      this.setState({
+        filteredBooks: books
+      })
+    } else {
+      this.setState({
+        filteredBooks: books.filter(book => this.state.selectedAuthors.includes(book.author))
+      })
+    }
+
+  }
+
   render() {
+    // console.log(this.state.filteredBooks);
     // console.log(this.state.authors);
+    console.log(this.state.selectedAuthors);
+
     return (
       <Container style={{ margin: '0px' }}>
         <Row>
-          <Col md={2}><BookFilters authors={this.state.authors} /></Col>
-          <Col md={10}><BookList books={books} /></Col>
+          <Col md={2}><BookFilters authors={this.state.authors} handleSelectAuthor={this.handleSelectAuthor} /></Col>
+          <Col md={10}><BookList books={this.state.filteredBooks} /></Col>
         </Row>
       </Container>
     );
