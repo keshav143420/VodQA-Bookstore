@@ -2,11 +2,12 @@ import React from 'react';
 import './App.css';
 
 import { Button, Navbar, Nav, Form, FormControl } from 'react-bootstrap';
+import VQStore from './components/VQStore';
 
 function App() {
   return (
     <div>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="primary" expand="lg">
         <Navbar.Brand href="#home">VodQA-Bookstore</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -19,6 +20,7 @@ function App() {
           </Form>
         </Navbar.Collapse>
       </Navbar>
+      <VQStore />
     </div>
   );
 }
