@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import BookList from './BookList';
 import BookFilters from './BookFilters';
 import { Container, Row, Col } from 'react-bootstrap';
+import { withRouter } from 'react-router-dom';
 
 const books = [
   {
@@ -421,72 +422,6 @@ const books = [
     "description": "After decades as an itinerant alcoholic, middle-aged Dan Torrance uses his remnant powers to assist the dying before coming to the aid of a twelve-year-old girl being tortured by a tribe of murderous paranormals."
   }
 ];
-class VQStore2 extends React.Component {
-
-  constructor(props) {
-    super(props)
-    this.state = {
-      authors: books.reduce((acc, curr) => {
-        if (typeof acc[curr.author] == 'undefined') {
-          acc[curr.author] = 1;
-        } else {
-          acc[curr.author] += 1;
-        }
-        return acc;
-      }, {})// .map(book => book.author)
-      ,
-      selectedAuthors: [],
-      filteredBooks: books
-    }
-    this.handleSelectAuthor = this.handleSelectAuthor.bind(this);
-  }
-
-  handleSelectAuthor = (authorName) => {
-    let newAuthors = [];
-    if (this.state.selectedAuthors.includes(authorName)) {
-      let newAuthors = this.state.selectedAuthors.slice();
-
-      for (var i = 0; i < newAuthors.length; i++) {
-        if (newAuthors[i] === authorName) {
-          newAuthors.splice(i, 1);
-        }
-      }
-    } else {
-      newAuthors = [...this.state.selectedAuthors];
-      newAuthors.push(authorName);
-    }
-    console.log('newAuthors' + newAuthors);
-    this.setState({
-      selectedAuthors: newAuthors
-    })
-
-    if (newAuthors.length === 0) {
-      this.setState({
-        filteredBooks: books
-      })
-    } else {
-      this.setState({
-        filteredBooks: books.filter(book => newAuthors.includes(book.author))
-      })
-    }
-
-  }
-
-  render() {
-    // console.log(this.state.filteredBooks);
-    // console.log(this.state.authors);
-    console.log(this.state.selectedAuthors);
-
-    return (
-      <Container style={{ margin: '0px' }}>
-        <Row>
-          <Col md={2}><BookFilters authors={this.state.authors} handleSelectAuthor={this.handleSelectAuthor} /></Col>
-          <Col md={10}><BookList books={this.state.filteredBooks} /></Col>
-        </Row>
-      </Container>
-    );
-  }
-}
 
 const VQStore = () => {
   const [authors, setAuthors] = useState([...new Set(books.map(item => item.author))]);
@@ -518,4 +453,4 @@ const VQStore = () => {
 
 
 
-export default VQStore;
+export default withRouter(VQStore);
