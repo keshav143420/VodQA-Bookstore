@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 
-import { Button, Navbar, Nav, Form, FormControl } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
+
 import VQStore from './components/VQStore';
 
 function App() {
@@ -11,13 +12,13 @@ function App() {
         <Navbar.Brand href="#home">VodQA-Bookstore</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
+          {/* <Nav className="mr-auto">
             <Nav.Link href="#home">purchase</Nav.Link>
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
             <Button variant="outline-success">Search</Button>
-          </Form>
+          </Form> */}
         </Navbar.Collapse>
       </Navbar>
       <VQStore />

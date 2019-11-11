@@ -438,9 +438,11 @@ class VQStore extends React.Component {
       selectedAuthors: [],
       filteredBooks: books
     }
+    this.handleSelectAuthor = this.handleSelectAuthor.bind(this);
   }
 
   handleSelectAuthor = (authorName) => {
+    let newAuthors = [];
     if (this.state.selectedAuthors.includes(authorName)) {
       let arr = this.state.selectedAuthors.slice();
 
@@ -453,18 +455,20 @@ class VQStore extends React.Component {
         selectedAuthors: arr
       })
     } else {
-      this.setState((state) => {
-        selectedAuthors: state.selectedAuthors.push(authorName)
+      newAuthors = [...this.state.selectedAuthors];
+      newAuthors.push(authorName);
+      this.setState({
+        selectedAuthors: newAuthors
       })
     }
-
-    if (this.state.selectedAuthors.length === 0) {
+ 
+    if ( newAuthors.length === 0) {
       this.setState({
         filteredBooks: books
       })
     } else {
       this.setState({
-        filteredBooks: books.filter(book => this.state.selectedAuthors.includes(book.author))
+        filteredBooks: books.filter(book => newAuthors.includes(book.author))
       })
     }
 
