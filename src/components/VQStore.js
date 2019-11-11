@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import BookList from './BookList';
 import BookFilters from './BookFilters';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -421,7 +421,7 @@ const books = [
     "description": "After decades as an itinerant alcoholic, middle-aged Dan Torrance uses his remnant powers to assist the dying before coming to the aid of a twelve-year-old girl being tortured by a tribe of murderous paranormals."
   }
 ];
-class VQStore extends React.Component {
+class VQStore2 extends React.Component {
 
   constructor(props) {
     super(props)
@@ -444,25 +444,23 @@ class VQStore extends React.Component {
   handleSelectAuthor = (authorName) => {
     let newAuthors = [];
     if (this.state.selectedAuthors.includes(authorName)) {
-      let arr = this.state.selectedAuthors.slice();
+      let newAuthors = this.state.selectedAuthors.slice();
 
-      for (var i = 0; i < arr.length; i++) {
-        if (arr[i] === authorName) {
-          arr.splice(i, 1);
+      for (var i = 0; i < newAuthors.length; i++) {
+        if (newAuthors[i] === authorName) {
+          newAuthors.splice(i, 1);
         }
       }
-      this.setState({
-        selectedAuthors: arr
-      })
     } else {
       newAuthors = [...this.state.selectedAuthors];
       newAuthors.push(authorName);
-      this.setState({
-        selectedAuthors: newAuthors
-      })
     }
- 
-    if ( newAuthors.length === 0) {
+    console.log('newAuthors' + newAuthors);
+    this.setState({
+      selectedAuthors: newAuthors
+    })
+
+    if (newAuthors.length === 0) {
       this.setState({
         filteredBooks: books
       })
@@ -489,5 +487,35 @@ class VQStore extends React.Component {
     );
   }
 }
+
+const VQStore = () => {
+  const [authors, setAuthors] = useState([...new Set(books.map(item => item.author))]);
+  const [selectedAuthors, setSelectedAuthors] = useState([]);
+  const [filteredBooks, setFilteredBooks] = useState(books);
+
+  useEffect(() => {
+    if (selectedAuthors.length >= 1) {
+      // console.log('Executed');console.Log (selectedAuthors);
+
+      // setFilteredBooks(books.filter(item => selectedAuthors.findIndex(item.author) >= -1));
+      setFilteredBooks(books.filter(item=> selectedAuthors.includes(item.author)));
+    }
+    else {
+      setFilteredBooks(books);
+    }
+  }, [selectedAuthors]);
+
+
+  return (
+    <Container style={{ margin: '0px' }}>
+      <Row>
+        <Col md={2}><BookFilters authors={authors} selectedAuthors={selectedAuthors} handleSelectAuthor={setSelectedAuthors} /></Col>
+        <Col md={10}><BookList books={filteredBooks} /></Col>
+      </Row>
+    </Container>
+  );
+}
+
+
 
 export default VQStore;
