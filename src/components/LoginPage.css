@@ -1,0 +1,11 @@
+
+.LoginPage {
+  padding: 60px 0;
+  width: 400px;
+  align-items: center;
+}
+
+.LoginPage form {
+  margin: 0 auto;
+  max-width: 320px;
+}

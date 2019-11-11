@@ -424,7 +424,7 @@ const books = [
 ];
 
 const VQStore = () => {
-  const [authors, setAuthors] = useState([...new Set(books.map(item => item.author))]);
+  const [authors] = useState([...new Set(books.map(item => item.author))]);
   const [selectedAuthors, setSelectedAuthors] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState(books);
 
