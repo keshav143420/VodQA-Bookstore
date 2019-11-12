@@ -40,7 +40,7 @@ export function LoginPage() {
   };
 
   function disableSubmit() {
-    return /^\w+([.-]?\w+)*@\w+([.-]?\w+)*$/.test(email) && password && password.length >= 3;
+    return /^\w+([.-]?\w+)*@\w+([.-]?\w+)*$/.test(email) && password && password.length > 0;
   }
 
   return (
