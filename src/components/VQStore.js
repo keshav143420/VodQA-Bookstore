@@ -3,6 +3,7 @@ import BookList from './BookList';
 import BookFilters from './BookFilters';
 import { Container, Row, Col } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
+import axios from 'axios';
 
 const books = [
   {
@@ -427,22 +428,46 @@ const VQStore = () => {
   const [authors] = useState([...new Set(books.map(item => item.author))]);
   const [selectedAuthors, setSelectedAuthors] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState(books);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     if (selectedAuthors.length >= 1) {
       // console.log('Executed');console.Log (selectedAuthors);
 
       // setFilteredBooks(books.filter(item => selectedAuthors.findIndex(item.author) >= -1));
-      setFilteredBooks(books.filter(item=> selectedAuthors.includes(item.author)));
+      setFilteredBooks(books.filter(item => selectedAuthors.includes(item.author)));
     }
     else {
       setFilteredBooks(books);
     }
   }, [selectedAuthors]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      var config = {
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest',
+          'Access-Control-Allow-Origin': '*'
+        }
+      };
+      const result = await axios(
+        'https://us-central1-fire-app-bykk.cloudfunctions.net/allbooks', config
+      );
+      setData(result.data);
+      console.log(result.data);
+    };
+    fetchData();
+  }, []);
 
   return (
     <Container style={{ margin: '0px' }}>
+      {/* <Row>
+        {data.map((d,i) =>
+          <>
+            <div key={i}>{d.author}</div>
+          </>
+        )}
+      </Row> */}
       <Row>
         <Col md={2}><BookFilters authors={authors} selectedAuthors={selectedAuthors} handleSelectAuthor={setSelectedAuthors} /></Col>
         <Col md={10}><BookList books={filteredBooks} /></Col>
