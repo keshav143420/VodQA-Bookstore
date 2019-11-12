@@ -11,7 +11,7 @@ export function AuthButton() {
     Sign Out
       </Nav.Link>) : (
       // <Nav.Link>You are not logged in.</Nav.Link>
-      <Nav.Link onClick={() => history.push('/login')}>
+      <Nav.Link onClick={() => history.push('/shopbook')}>
         Sign In
       </Nav.Link>);
 }

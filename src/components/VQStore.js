@@ -13,9 +13,6 @@ const VQStore = () => {
 
   useEffect(() => {
     if (selectedAuthors.length >= 1) {
-      // console.log('Executed');console.Log (selectedAuthors);
-
-      // setFilteredBooks(books.filter(item => selectedAuthors.findIndex(item.author) >= -1));
       setFilteredBooks(data.filter(item => selectedAuthors.includes(item.author)));
     }
     else {
@@ -36,7 +33,6 @@ const VQStore = () => {
       );
       setData(result.data);
       setAuthors([...new Set(result.data.map(item => item.author))])
-      console.log(result.data);
     };
     fetchData();
   }, []);
