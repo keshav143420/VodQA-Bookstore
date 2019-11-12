@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Carousel, Spinner } from 'react-bootstrap';
+import { Carousel, Spinner, Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
 
 function HomePage() {
@@ -27,32 +27,36 @@ function HomePage() {
       const result = await axios(
         'https://us-central1-fire-app-bykk.cloudfunctions.net/allbooks', config
       );
-      setData(result.data.slice(4,10));
+      setData(result.data.slice(4, 10));
     };
     fetchData();
   }, []);
 
   return (
-    <div style={{maxWidth:'500px', maxHeight: '700px'}}>
-      {data.length === 0 && <Spinner animation="border" />}
-      <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
-        {data.map((d,i) =>
-          <Carousel.Item key={i}>
-            <img
-              className="d-block w-100"
-              src={d.image}
-              alt={d.title}
-            />
-            <Carousel.Caption>
-        <h3>{d.title}</h3>
-        <p>{d.description.slice(0,100) + '...'}</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        )}
-
-
-      </Carousel>
-    </div>
+    <Container>
+      <Row>
+        <Col md={{ span: 6, offset: 3 }}>
+          <div style={{ maxWidth: '500px', maxHeight: '700px' }}>
+            {data.length === 0 && <Spinner animation="border" />}
+            <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
+              {data.map((d, i) =>
+                <Carousel.Item key={i}>
+                  <img
+                    className="d-block w-100"
+                    src={d.image}
+                    alt={d.title}
+                  />
+                  <Carousel.Caption>
+                    <h3>{d.title}</h3>
+                    <p>{d.description.slice(0, 100) + '...'}</p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              )}
+            </Carousel>
+          </div>
+        </Col>
+      </Row>
+    </Container>
   )
 }
 

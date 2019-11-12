@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, FormGroup, FormControl, FormLabel } from 'react-bootstrap';
+import { Button, FormGroup, FormControl, FormLabel, Row, Container } from 'react-bootstrap';
 import { useHistory, useLocation } from "react-router-dom";
 
 import { authService } from '../services/authService';
@@ -21,23 +21,25 @@ export function LoginPage() {
     });
     e.preventDefault();
   };
-  return (<div>
-
-    <div className="LoginPage">
-      <form onSubmit={login}>
-        <FormGroup controlId="email">
-          <FormLabel>Email</FormLabel>
-          <FormControl autoFocus type="email" value={email} onChange={e => setEmail(e.target.value)} />
-        </FormGroup>
-        <FormGroup controlId="password">
-          <FormLabel>Password</FormLabel>
-          <FormControl value={password} onChange={e => setPassword(e.target.value)} type="password" />
-        </FormGroup>
-        <Button block disabled={!validateForm()} type="submit">
-          Login
+  return (<Container>
+    <Row className="justify-content-md-center">
+      <div className="LoginPage">
+        <form onSubmit={login}>
+          <FormGroup controlId="email">
+            <FormLabel>Email</FormLabel>
+            <FormControl autoFocus type="email" value={email} onChange={e => setEmail(e.target.value)} />
+          </FormGroup>
+          <FormGroup controlId="password">
+            <FormLabel>Password</FormLabel>
+            <FormControl value={password} onChange={e => setPassword(e.target.value)} type="password" />
+          </FormGroup>
+          <Button block disabled={!validateForm()} type="submit">
+            Login
         </Button>
-      </form>
-    </div>
+        </form>
+      </div>
+    </Row>
 
-  </div>);
+
+  </Container>);
 }
