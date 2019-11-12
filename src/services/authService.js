@@ -1,14 +1,14 @@
 export const authService = {
-  isAuthenticated: false,
+  isAuthenticated: localStorage.getItem('isLoggedIn') === 'true' ? true : false,
   authenticate(cb) {
     localStorage.setItem('isLoggedIn', true);
     const coockieAuthStatus = localStorage.getItem('isLoggedIn');
-    authService.isAuthenticated = coockieAuthStatus;
+    authService.isAuthenticated = coockieAuthStatus === "true";
     setTimeout(cb, 100); // fake async
   },
   signout(cb) {
     localStorage.removeItem('isLoggedIn');
-    const coockieAuthStatus = localStorage.getItem('isLoggedIn') || false;
+    const coockieAuthStatus = localStorage.getItem('isLoggedIn') === "false" || false;
     authService.isAuthenticated = coockieAuthStatus;
     setTimeout(cb, 100);
   }
