@@ -7,8 +7,8 @@ import { authService } from '../services/authService';
 import './LoginPage.css';
 
 export function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("ii@ii.com");
+  const [password, setPassword] = useState("test");
   function validateForm() {
     return email.length > 0 && password.length > 0;
   }
