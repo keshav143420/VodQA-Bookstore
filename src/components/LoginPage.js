@@ -40,7 +40,7 @@ export function LoginPage() {
   };
 
   function disableSubmit() {
-    return /^\w+([.-]?\w+)*@\w+([.-]?\w+)*$/.test(email) && password && password.length > 0;
+    return /^\w+([.-]?\w+)*@\w+([.-]?\w+)*$/.test(email) && password && password.length >= 3;
   }
 
   return (
@@ -59,7 +59,7 @@ export function LoginPage() {
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" placeholder="Password" defaultValue={password} required onChange={e => setPassword(e.target.value)} />
               <Form.Control.Feedback type="invalid">
-                Please provide a valid password. (atleast 3 char)
+                Please provide a valid password. (atleast 1 char)
               </Form.Control.Feedback>
             </Form.Group>
           </Form.Row>
