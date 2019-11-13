@@ -12,9 +12,9 @@ class BookList extends React.Component {
             <Card.Img src={book.image} />
             <Card.Body>
               <Card.Title>{book.title}</Card.Title>
-              <Card.Text>
+              <Card.Subtitle>
                 {book.author}
-              </Card.Text>
+              </Card.Subtitle>
               <Card.Text>
                 {book.description.slice(0, 50) + '...'}
               </Card.Text>
