@@ -64,7 +64,7 @@ export function LoginPage() {
             </Form.Group>
           </Form.Row>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Button disabled={!disableSubmit()} type="submit">Submit form</Button>
+            <Button disabled={!disableSubmit()} type="submit">Sign In</Button>
             <Button onClick={handleValidate}>Validate</Button>
           </div>
         </Form>
