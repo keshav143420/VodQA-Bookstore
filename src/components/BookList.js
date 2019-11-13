@@ -12,7 +12,11 @@ class BookList extends React.Component {
             <Card.Img src={book.image} />
             <Card.Body>
               <Card.Title>{book.title}</Card.Title>
-              <Card.Text>{book.description.slice(0, 50) + '...'}
+              <Card.Text>
+                {book.author}
+              </Card.Text>
+              <Card.Text>
+                {book.description.slice(0, 50) + '...'}
               </Card.Text>
             </Card.Body>
             <Card.Footer style={{ display: 'flex', justifyContent: 'space-between' }}>
