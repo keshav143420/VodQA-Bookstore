@@ -15,7 +15,7 @@ class BookFilters extends React.Component {
       newSelectedAuthors.push(value);
     }
     else{
-        newSelectedAuthors = newSelectedAuthors.filter(item=> item!==value);
+      newSelectedAuthors = newSelectedAuthors.filter(item=> item!==value);
     }
     this.props.handleSelectAuthor(newSelectedAuthors);
   }
@@ -27,7 +27,7 @@ class BookFilters extends React.Component {
         <Form>
           {
             Object.values(this.props.authors).map((author, index) =>
-              <Form.Group key={index} controlId="formBasicCheckbox">
+              <Form.Group key={index} controlId={"formBasicCheckbox" + index}>
                 <Form.Check type="checkbox" value={author} label={author} onChange={this.handleChange} />
               </Form.Group>
             )
