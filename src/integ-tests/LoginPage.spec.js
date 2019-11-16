@@ -6,15 +6,13 @@ import { Router } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
 import { toBeDisabled } from '@testing-library/jest-dom'
 expect.extend({ toBeDisabled })
+
+
 describe('Login page tests', () => {
 
     it('validate the login Page UI', async () => {
-        const { getByPlaceholderText, getByText } = renderLoginPage()
+        const { getByText } = renderLoginPage()
         await waitForElement(() => getByText('Email'));
-        expect(getByText('Email')).toBeDefined();
-        expect(getByPlaceholderText('Password')).toBeDefined();
-        expect(getByText('Validate')).toBeDefined();
-        expect(getByText('Sign In')).toBeDefined();
     })
 
     it('validate the Error messages are Not displayed for valid creds', async () => {
@@ -23,7 +21,7 @@ describe('Login page tests', () => {
     })
 
     it('validate Sign In button is disabled for invalid creds', async () => {
-       
+
     })
 
 });
