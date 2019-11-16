@@ -5,13 +5,12 @@ import NavigationBar from '../components/NavContainer'
 
 describe('Shopping Page tests', () => {
     it('validate the Shopping Page UI', async () => {
-
+        // const { getByText } = renderNavigationBar();
     })
 });
 
 
+
 function renderNavigationBar() {
-    return render(
-        <NavigationBar></NavigationBar>
-    )
+
 }

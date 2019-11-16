@@ -1,11 +1,12 @@
 import { render } from '@testing-library/react';
 import React from 'react'
-import OffersPAge from '../components/OffersPage'
+import OffersPage from '../components/OffersPage'
+
 describe('Offers Page tests', () => {
 
-    it('validate the offers', async () => {
+    it('validate the offers page UI', async () => {
         const { getByText } = render(
-            <OffersPAge></OffersPAge>
+            <OffersPage></OffersPage>
         )
         expect(getByText('OffersPage under construction')).toBeDefined();
     })
