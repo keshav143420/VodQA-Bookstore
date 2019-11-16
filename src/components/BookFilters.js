@@ -9,13 +9,13 @@ class BookFilters extends React.Component {
   }
 
   handleChange(e) {
-    const {value, checked} = e.target;
+    const { value, checked } = e.target;
     let newSelectedAuthors = [...new Set(this.props.selectedAuthors)];
-    if(checked){
+    if (checked) {
       newSelectedAuthors.push(value);
     }
-    else{
-      newSelectedAuthors = newSelectedAuthors.filter(item=> item!==value);
+    else {
+      newSelectedAuthors = newSelectedAuthors.filter(item => item !== value);
     }
     this.props.handleSelectAuthor(newSelectedAuthors);
   }
@@ -27,7 +27,9 @@ class BookFilters extends React.Component {
         <Form>
           {
             Object.values(this.props.authors).map((author, index) =>
+
               <Form.Group key={index} controlId={"formBasicCheckbox" + index}>
+
                 <Form.Check type="checkbox" value={author} label={author} onChange={this.handleChange} />
               </Form.Group>
             )

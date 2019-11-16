@@ -5,6 +5,8 @@ import { authService } from '../services/authService';
 
 export function AuthButton() {
   let history = useHistory();
+
+console.log('aaa',authService.isAuthenticated);
   return authService.isAuthenticated ? (<Nav.Link onClick={() => {
     authService.signout(() => history.push("/"));
   }}>
