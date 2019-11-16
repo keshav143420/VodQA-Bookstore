@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "author": "Chetan Bhagat",
+    "title": "The Girl in Room 105",
+    "image": "http://books.google.com/books/content?id=GHt_uwEACAAJ&printsec=frontcover&img=1&zoom=5",
+    "price": 193,
+    "description": "Hi, I'm Keshav, and my life is screwed. I hate my job and my girlfriend left me. Ah, the beautiful Zara. Zara is from Kashmir. She is a Muslim. And did I tell you my family is a bit, well, traditional? Anyway, leave that. Zara and I broke up four years ago. She moved on in life. I didnt. I drank every night to forget her. I called, messaged, and stalked her on social media. She just ignored me. However, that night, on the eve of her birthday, Zara messaged me. She called me over, like old times, to her hostel room 105. I shouldnt have gone, but I did... and my life changed forever. This is not a love story. It is an unlove story.From the author of Five Point Someone and 2 States, comes a fast-paced, funny and unputdownable thriller about obsessive love and finding purpose in life against the backdrop of contemporary India."
+  },
+  {
+    "id": 2,
+    "author": "Rujuta Divekar",
+    "title": "Indian Superfoods Mock",
+    "image": "http://books.google.com/books/content?id=4oFoDwAAQBAJ&printsec=frontcover&img=1&zoom=5",
+    "price": 495,
+    "description": "Forget about acacia seeds and goji berries. The secret foods for health, vitality and weight loss lie in our own kitchens and backyards. Top nutritionist Rujuta Diwekar talks you through the ten Indian superfoods that will completely transform you"
+  },
+  {
+    "id": 3,
+    "author": "Dan Brown",
+    "title": "Angels And Demons",
+    "image": "http://books.google.com/books/content?id=d5xgYw4Ts0gC&printsec=frontcover&img=1&zoom=5",
+    "price": 218,
+    "description": "*INCLUDES A SNEAK PREVIEW OF ORIGIN,THE NEW THRILLER BY DAN BROWN: OUT 3RD OCTOBER. PRE-ORDER TODAY* --------------------------------------------------------------------------------------------------- CERN Institute, Switzerland: a world-renowned scientist is found brutally murdered with a mysterious symbol seared onto his chest. The Vatican, Rome: the College of Cardinals assembles to elect a new pope. Somewhere beneath them, an unstoppable bomb of terrifying power relentlessly counts down to oblivion. In a breathtaking race against time, Harvard professor Robert Langdon must decipher a labyrinthine trail of ancient symbols if he is to defeat those responsible - the Illuminati, a secret brotherhood presumed extinct for nearly four hundred years, reborn to continue their deadly vendetta against their most hated enemy, the Catholic Church."
+  },
+  {
+    "id": 4,
+    "author": "Dan Brown",
+    "title": "Angels & Demons - Movie Tie-In",
+    "image": "http://books.google.com/books/content?id=GXznEnKwTdAC&printsec=frontcover&img=1&zoom=5",
+    "price": 462,
+    "description": "The murder of a world-famous physicist raises fear that the Illuminati are operating again after centuries of silence, and religion professor Robert Langdon is called in to assist with the case. By the author of Digital Fortress. Reprint."
+  },
+  {
+    "id": 5,
+    "author": "Dan Brown",
+    "title": "OriginMock",
+    "image": "http://books.google.com/books/content?id=95wnDQAAQBAJ&printsec=frontcover&img=1&zoom=5",
+    "price": 174,
+    "description": "Sunday Times #1 Bestseller New York Times #1 Bestseller The global bestseller - Origin is the latest Robert Langdon novel from the author of The Da Vinci Code. Fans will not be disappointed The Times Robert Langdon, Harvard professor of symbology and religious iconology, arrives at the Guggenheim Museum Bilbao to attend the unveiling of an astonishing scientific breakthrough. The evening’s host is billionaire Edmond Kirsch, a futurist whose dazzling high-tech inventions and audacious predictions have made him a controversial figure around the world. But Langdon and several hundred guests are left reeling when the meticulously orchestrated evening is suddenly blown apart. There is a real danger that Kirsch’s precious discovery may be lost in the ensuing chaos. With his life under threat, Langdon is forced into a desperate bid to escape Bilbao, taking with him the museum’s director, Ambra Vidal. Together they flee to Barcelona on a perilous quest to locate a cryptic password that will unlock Kirsch’s secret. To evade a devious enemy who is one step ahead of them at every turn, Langdon and Vidal must navigate the labyrinthine passageways of extreme religion and hidden history. On a trail marked only by enigmatic symbols and elusive modern art, Langdon and Vidal will come face-to-face with a breathtaking truth that has remained buried – until now. ‘Dan Brown is the master of the intellectual cliffhanger’ Wall Street Journal ‘As engaging a hero as you could wish for’ Mail on Sunday ‘For anyone who wants more brain-food than thrillers normally provide’ Sunday Times"
+  }
+  ]

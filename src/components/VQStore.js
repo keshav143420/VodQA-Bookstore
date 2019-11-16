@@ -11,7 +11,7 @@ const VQStore = () => {
   const [selectedAuthors, setSelectedAuthors] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState(data);
 
-  useEffect(() => {
+  useEffect(() => { 
     if (selectedAuthors.length >= 1) {
       setFilteredBooks(data.filter(item => selectedAuthors.includes(item.author)));
     }

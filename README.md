@@ -26,3 +26,12 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### Setup Instructions -
+
+Install [`node`](https://nodejs.dev/how-to-install-nodejs) and validate using `node -v`
+
+Install latest [`yarn`](https://yarnpkg.com/lang/en/docs/install) 
+
+Clone the repo `https://github.com/keshav143420/VodQA-Bookstore`  
+
+Run `yarn && yarn start` - Should start the app on [http://localhost:3000](http://localhost:3000)
